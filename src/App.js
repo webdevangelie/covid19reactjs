@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
+import Header from './components/Header'
+import TrackerList from './components/TrackerList';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [confirmed, setConfirmed] = useState()
+  const [deaths, setDeaths] = useState()
+  const [recovered, setRecovered] = useState()
+  
+  useEffect(() => {
+    getData()
+  }, [] )
+
+  const getData = async () => {
+    const response = await fetch('https://api.covid19api.com/summary')
+    const data = await response.json()
+    setConfirmed(data.Global.TotalConfirmed)
+    setDeaths(data.Global.TotalDeaths)
+    setRecovered(data.Global.TotalRecovered)
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Tracker confirmed={confirmed} />
+      <Tracker deaths={deaths} />
+      <Tracker recovered={recovered} />
     </div>
   );
 }
