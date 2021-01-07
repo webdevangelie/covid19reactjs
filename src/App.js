@@ -33,16 +33,15 @@ const App = () => {
     <Router>
       <div className="App">
         <Header />
-        
-        { loadStatus === "loaded" ? 
+        <Switch>
+          <Route path='/' exact render={() => loadStatus === "loaded" ? 
           <TrackerList 
             confirmed={confirmed} 
             deaths={deaths} 
             recovered={recovered} 
           /> 
         : <div>Loading...</div>
-        }
-        <Switch>
+        } />
           
           <Route path='/graph' component={Graph} />
           <Route path='/search' component={Search} />
