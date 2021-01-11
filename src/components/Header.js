@@ -6,6 +6,10 @@ const Header = () => {
 
   const Navbar = styled.nav`
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     align-items: center;
     justify-content: space-evenly;
     background-color: blue;
@@ -20,6 +24,11 @@ const Header = () => {
         list-style: none;
         padding-right: 1.5rem;
       }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
 
   `
@@ -30,11 +39,13 @@ const Header = () => {
         <h1>COVID19 Global Tracker</h1>
         <nav>
           <Link to='/'>
-           <li>Summary</li>
-          </Link>
-          <Link to='/search'>
             <li>Search</li>
           </Link>
+
+          <Link to='/summary'>
+           <li>Summary</li>
+          </Link>
+          
           <Link to='/graph'>
             <li>Graph</li>
           </Link>

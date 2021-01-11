@@ -13,18 +13,26 @@ const App = () => {
   const [deaths, setDeaths] = useState()
   const [recovered, setRecovered] = useState()
   const [loadStatus, setLoadStatus] = useState('loading')
+  const [countries, setCountries] = useState([])
+  const [searchCountry, setSearchCountry] = useState()
   
   useEffect(() => {
     getData()
+    
   }, [] )
+
+  const updateSetSearchCountry = e => {
+    setSearchCountry(e.target.value)
+  }
 
   const getData = async () => {
     const response = await fetch('https://api.covid19api.com/summary')
     const data = await response.json()
-    console.log(data)
+
     setConfirmed(data.Global.TotalConfirmed)
     setDeaths(data.Global.TotalDeaths)
     setRecovered(data.Global.TotalRecovered)
+    setCountries(data.Countries)
     setLoadStatus('loaded')
     }
 
@@ -34,17 +42,26 @@ const App = () => {
       <div className="App">
         <Header />
         <Switch>
-          <Route path='/' exact render={() => loadStatus === "loaded" ? 
-          <TrackerList 
-            confirmed={confirmed} 
-            deaths={deaths} 
-            recovered={recovered} 
-          /> 
-        : <div>Loading...</div>
-        } />
+          <Route path='/' exact render={() => loadStatus === "loaded" ?
+             <Search 
+              countries={countries} 
+              searchCountry={searchCountry} 
+              searchChange={updateSetSearchCountry}
+              />
+             : <div>Loading...</div>
+          } />
+
+          <Route path='/summary' render={() => loadStatus === "loaded" ? 
+            <TrackerList 
+              confirmed={confirmed} 
+              deaths={deaths} 
+              recovered={recovered} 
+            /> 
+            : <div>Loading...</div>
+          } />
           
           <Route path='/graph' component={Graph} />
-          <Route path='/search' component={Search} />
+
         </Switch>
       </div>
     </Router>

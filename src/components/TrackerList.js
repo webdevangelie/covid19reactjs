@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-//import grave from '/grave.svg'
-// import recovered from '../public/recovered.svg'
-// import virus from '../public/virus.png'
+import Grave from './Grave'
+import Recovered from './Recovered'
+import Virus from '../assets/virus.png'
 
 
 const TrackerList = ({confirmed, deaths, recovered}) => {
@@ -43,19 +43,19 @@ const TrackerList = ({confirmed, deaths, recovered}) => {
       <div className='box box-confirmed'>
         <h2>Total Confirmed</h2>
         <p>{confirmed.toLocaleString()}</p>
-        <img src="" alt="" /> 
+        <img src={Virus} alt="" /> 
       </div>
 
       <div className='box box-death'>
         <h2>Total Deaths</h2>
         <p>{deaths.toLocaleString()}</p>
-        <img src="" alt="" /> 
+        <Grave /> 
       </div>
 
       <div className='box box-recovered'>
         <h2>Total Recovered</h2>
         <p>{recovered.toLocaleString()}</p>
-        <img src={recovered} alt="" /> 
+        <Recovered />
       </div>
     </Data>
   )
