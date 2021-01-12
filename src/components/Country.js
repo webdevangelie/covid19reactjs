@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Country = ({country, tconfirmed}) => {
-
-  const Box = styled.div`
+const Box = styled.div`
     background-color: #fff;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 5px;
@@ -19,8 +17,9 @@ const Country = ({country, tconfirmed}) => {
     padding: 5px 10px;
     border-radius: 5px;
     }
-
   `
+
+const Country = ({country, tconfirmed}) => {
 
   return (
     <Box>

@@ -1,13 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Grave from './Grave'
 import Recovered from './Recovered'
 import Virus from '../assets/virus.png'
 
-
-const TrackerList = ({confirmed, deaths, recovered}) => {
-
-  const Data = styled.data`
+const Data = styled.data`
     margin: 90px auto;
     display: flex;
     justify-content: center;
@@ -37,6 +34,8 @@ const TrackerList = ({confirmed, deaths, recovered}) => {
       background-color: black;
     }
   `
+
+const TrackerList = ({confirmed, deaths, recovered}) => {
 
   return (
     <Data>

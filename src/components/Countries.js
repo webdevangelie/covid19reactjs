@@ -1,12 +1,12 @@
 import React from 'react'
-import Country from './Country'
+import C from './Country'
 
-const Countries = (countries) => {
+const Countries = ({filteredCountry}) => {
   return (
     <div>
-      {countries.map(country => (
-        <Country country={countries.Country} tconfirmed={countries.TotalConfirmed} key={countries.CountryCode} />
-      ))}
+      {filteredCountry.map(({ Country, TotalConfirmed, CountryCode }) => {
+        return <C key={CountryCode} country={Country} tconfirmed={TotalConfirmed} className='box'/>
+      })}
     </div>
   )
 }

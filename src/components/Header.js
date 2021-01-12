@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Header = () => {
-
-  const Navbar = styled.nav`
+const Navbar = styled.nav`
     display: flex;
     position: fixed;
     top: 0;
@@ -32,6 +30,8 @@ const Header = () => {
     }
 
   `
+
+const Header = () => {
 
   return (
     <div>
