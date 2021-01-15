@@ -9,9 +9,10 @@ const Navbar = styled.nav`
     left: 0;
     right: 0;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-color: blue;
     color: white;
+    z-index: 100;
 
     nav {
       display: flex;
@@ -34,25 +35,18 @@ const Navbar = styled.nav`
 const Header = () => {
 
   return (
-    <div>
       <Navbar>
         <h1>COVID19 Global Tracker</h1>
+        <h5>{`${new Date()}`}</h5> 
         <nav>
           <Link to='/'>
             <li>Search</li>
           </Link>
-
           <Link to='/summary'>
            <li>Summary</li>
           </Link>
-          
-          <Link to='/graph'>
-            <li>Graph</li>
-          </Link>
         </nav>
       </Navbar>
-      <h3>{`Date: ${new Date()}`}</h3> 
-    </div>
   )
 }
 

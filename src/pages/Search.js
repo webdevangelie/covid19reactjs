@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Form = styled.form`
-    margin-top: 100px;
+    margin-top: 120px;
 
     input {
       padding: 10px 20px;

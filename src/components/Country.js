@@ -5,28 +5,24 @@ const Box = styled.div`
     background-color: #fff;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 5px;
-    width: 300px;
-    padding: 30px;
-    margin: 30px;
+    width: 200px;
+    padding: 0 35px;
+    margin: 20px;
     text-align: center;
-
-    button {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    }
+    line-height: 1.1;
   `
 
-const Country = ({country, tconfirmed}) => {
+const Country = ({country, tconfirmed, tdeaths, trecovered}) => {
 
   return (
     <Box>
-      <h2>{country}</h2>
-      <p>Total Confirmed Cases:</p>
+      <h3>{country}</h3>
+      <p>Total Confirmed:</p>
       <p>{tconfirmed.toLocaleString()}</p>
-      <button>See More</button>
+      <p>Total Deaths:</p>
+      <p>{tdeaths.toLocaleString()}</p>
+      <p>Total Recovered:</p>
+      <p>{trecovered.toLocaleString()}</p>
     </Box>
   )
 }
