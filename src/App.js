@@ -43,7 +43,7 @@ const App = () => {
       <div className="App">
       <Header />
         <Switch>
-          <Route path='/covide19reactjs' exact render={() => loadStatus === "loaded" ?
+          <Route path='/covid19reactjs' exact render={() => loadStatus === "loaded" ?
             <Fragment>
               <Search 
                 searchValue={searchValue}
@@ -54,7 +54,7 @@ const App = () => {
              : <div>Loading...</div>
           } />
 
-          <Route path='/covide19reactjs/summary' render={() => loadStatus === "loaded" ? 
+          <Route path='/covid19reactjs/summary' render={() => loadStatus === "loaded" ? 
             <TrackerList 
               confirmed={confirmed} 
               deaths={deaths} 
