@@ -11,10 +11,11 @@ const Image = styled.img`
 `
 
 const Data = styled.div`
-    margin: 90px auto;
+    margin: 210px auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 
     .box {
       background-color: #fff;

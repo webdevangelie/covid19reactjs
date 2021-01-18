@@ -39,10 +39,10 @@ const Header = () => {
         <h1>COVID19 Global Tracker</h1>
         <h5>{`${new Date()}`}</h5> 
         <nav>
-          <Link to='/'>
+          <Link to='/covide19reactjs'>
             <li>Search</li>
           </Link>
-          <Link to='/summary'>
+          <Link to='/covide19reactjs/summary'>
            <li>Summary</li>
           </Link>
         </nav>
